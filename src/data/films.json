@@ -1,0 +1,302 @@
+[
+  {
+    "id": "1",
+    "title": "Inception",
+    "director": "Christopher Nolan",
+    "year": 2010
+  },
+  {
+    "id": "2",
+    "title": "The Matrix",
+    "director": "Lana Wachowski, Lilly Wachowski",
+    "year": 1999
+  },
+  {
+    "id": "3",
+    "title": "Interstellar",
+    "director": "Christopher Nolan",
+    "year": 2014
+  },
+  {
+    "id": "4",
+    "title": "Pulp Fiction",
+    "director": "Quentin Tarantino",
+    "year": 1994
+  },
+  {
+    "id": "5",
+    "title": "Spirited Away",
+    "director": "Hayao Miyazaki",
+    "year": 2001
+  },
+  {
+    "id": "6",
+    "title": "Parasite",
+    "director": "Bong Joon-ho",
+    "year": 2019
+  },
+  {
+    "id": "7",
+    "title": "Forrest Gump",
+    "director": "Robert Zemeckis",
+    "year": 1994
+  },
+  {
+    "id": "8",
+    "title": "The Shawshank Redemption",
+    "director": "Frank Darabont",
+    "year": 1994
+  },
+  {
+    "id": "9",
+    "title": "The Dark Knight",
+    "director": "Christopher Nolan",
+    "year": 2008
+  },
+  {
+    "id": "10",
+    "title": "Fight Club",
+    "director": "David Fincher",
+    "year": 1999
+  },
+  {
+    "id": "11",
+    "title": "Goodfellas",
+    "director": "Martin Scorsese",
+    "year": 1990
+  },
+  {
+    "id": "12",
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "director": "Peter Jackson",
+    "year": 2001
+  },
+  {
+    "id": "13",
+    "title": "Eternal Sunshine of the Spotless Mind",
+    "director": "Michel Gondry",
+    "year": 2004
+  },
+  {
+    "id": "14",
+    "title": "Amelie",
+    "director": "Jean-Pierre Jeunet",
+    "year": 2001
+  },
+  {
+    "id": "15",
+    "title": "The Godfather",
+    "director": "Francis Ford Coppola",
+    "year": 1972
+  },
+  {
+    "id": "16",
+    "title": "Avatar",
+    "director": "James Cameron",
+    "year": 2009
+  },
+  {
+    "id": "17",
+    "title": "Gladiator",
+    "director": "Ridley Scott",
+    "year": 2000
+  },
+  {
+    "id": "18",
+    "title": "Leon: The Professional",
+    "director": "Luc Besson",
+    "year": 1994
+  },
+  {
+    "id": "19",
+    "title": "Blade Runner 2049",
+    "director": "Denis Villeneuve",
+    "year": 2017
+  },
+  {
+    "id": "20",
+    "title": "Whiplash",
+    "director": "Damien Chazelle",
+    "year": 2014
+  },
+  {
+    "id": "21",
+    "title": "Arrival",
+    "director": "Denis Villeneuve",
+    "year": 2016
+  },
+  {
+    "id": "22",
+    "title": "Django Unchained",
+    "director": "Quentin Tarantino",
+    "year": 2012
+  },
+  {
+    "id": "23",
+    "title": "No Country for Old Men",
+    "director": "Joel Coen, Ethan Coen",
+    "year": 2007
+  },
+  {
+    "id": "24",
+    "title": "There Will Be Blood",
+    "director": "Paul Thomas Anderson",
+    "year": 2007
+  },
+  {
+    "id": "25",
+    "title": "Her",
+    "director": "Spike Jonze",
+    "year": 2013
+  },
+  {
+    "id": "26",
+    "title": "Mad Max: Fury Road",
+    "director": "George Miller",
+    "year": 2015
+  },
+  {
+    "id": "27",
+    "title": "Get Out",
+    "director": "Jordan Peele",
+    "year": 2017
+  },
+  {
+    "id": "28",
+    "title": "La La Land",
+    "director": "Damien Chazelle",
+    "year": 2016
+  },
+  {
+    "id": "29",
+    "title": "Room",
+    "director": "Lenny Abrahamson",
+    "year": 2015
+  },
+  {
+    "id": "30",
+    "title": "Birdman",
+    "director": "Alejandro G. Iñárritu",
+    "year": 2014
+  },
+  {
+    "id": "31",
+    "title": "The Grand Budapest Hotel",
+    "director": "Wes Anderson",
+    "year": 2014
+  },
+  {
+    "id": "32",
+    "title": "Boyhood",
+    "director": "Richard Linklater",
+    "year": 2014
+  },
+  {
+    "id": "33",
+    "title": "Gone Girl",
+    "director": "David Fincher",
+    "year": 2014
+  },
+  {
+    "id": "34",
+    "title": "Drive",
+    "director": "Nicolas Winding Refn",
+    "year": 2011
+  },
+  {
+    "id": "35",
+    "title": "Black Swan",
+    "director": "Darren Aronofsky",
+    "year": 2010
+  },
+  {
+    "id": "36",
+    "title": "Inglourious Basterds",
+    "director": "Quentin Tarantino",
+    "year": 2009
+  },
+  {
+    "id": "37",
+    "title": "District 9",
+    "director": "Neill Blomkamp",
+    "year": 2009
+  },
+  {
+    "id": "38",
+    "title": "Up",
+    "director": "Pete Docter, Bob Peterson",
+    "year": 2009
+  },
+  {
+    "id": "39",
+    "title": "WALL-E",
+    "director": "Andrew Stanton",
+    "year": 2008
+  },
+  {
+    "id": "40",
+    "title": "Ratatouille",
+    "director": "Brad Bird, Jan Pinkava",
+    "year": 2007
+  },
+  {
+    "id": "41",
+    "title": "Children of Men",
+    "director": "Alfonso Cuarón",
+    "year": 2006
+  },
+  {
+    "id": "42",
+    "title": "Pan's Labyrinth",
+    "director": "Guillermo del Toro",
+    "year": 2006
+  },
+  {
+    "id": "43",
+    "title": "V for Vendetta",
+    "director": "James McTeigue",
+    "year": 2005
+  },
+  {
+    "id": "44",
+    "title": "Batman Begins",
+    "director": "Christopher Nolan",
+    "year": 2005
+  },
+  {
+    "id": "45",
+    "title": "Kill Bill: Vol. 1",
+    "director": "Quentin Tarantino",
+    "year": 2003
+  },
+  {
+    "id": "46",
+    "title": "Finding Nemo",
+    "director": "Andrew Stanton, Lee Unkrich",
+    "year": 2003
+  },
+  {
+    "id": "47",
+    "title": "Catch Me If You Can",
+    "director": "Steven Spielberg",
+    "year": 2002
+  },
+  {
+    "id": "48",
+    "title": "A Beautiful Mind",
+    "director": "Ron Howard",
+    "year": 2001
+  },
+  {
+    "id": "49",
+    "title": "Donnie Darko",
+    "director": "Richard Kelly",
+    "year": 2001
+  },
+  {
+    "id": "50",
+    "title": "Requiem for a Dream",
+    "director": "Darren Aronofsky",
+    "year": 2000
+  }
+]
