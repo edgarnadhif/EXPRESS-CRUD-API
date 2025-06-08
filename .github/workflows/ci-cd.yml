@@ -14,16 +14,16 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Needed for proper git history in Vercel
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'npm'  # Faster installs through caching
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci  # Clean install for reproducibility
+        run: npm ci
 
       - name: Run tests
         run: npm test
@@ -31,10 +31,11 @@ jobs:
   deploy:
     needs: build-and-test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' || github.event_name == 'pull_request'
     permissions:
       contents: read
-      pull-requests: write  # Required for Vercel PR comments
+      pull-requests: write
+      deployments: write
 
     steps:
       - name: Checkout repository
@@ -45,10 +46,29 @@ jobs:
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
-          vercel-version: latest  # Avoids deprecated package warnings
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           scope: ${{ secrets.VERCEL_ORG_ID }}
-          comment-on-pull-request: true  # Explicitly enable PR comments
+          github-comment: true  # Parameter yang benar untuk komentar PR
+          vercel-args: '--prod'  # Deploy ke production jika push ke main
+
+      - name: Post manual comment (fallback)
+        if: github.event_name == 'pull_request' && (failure() || success())
+        uses: actions/github-script@v6
+        with:
+          script: |
+            try {
+              const deploymentUrl = '${{ steps.deploy.outputs.preview-url }}'
+              const message = `🚀 Preview Deployment berhasil!\n${deploymentUrl}`
+              
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: message
+              })
+            } catch (error) {
+              core.warning('Gagal posting komentar: ' + error.message)
+            }
