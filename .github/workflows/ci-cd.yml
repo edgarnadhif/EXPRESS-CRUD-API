@@ -44,31 +44,32 @@ jobs:
           fetch-depth: 0
 
       - name: Deploy to Vercel
+        id: deploy
         uses: amondnet/vercel-action@v25
+        continue-on-error: true
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           scope: ${{ secrets.VERCEL_ORG_ID }}
-          github-comment: true  # Parameter yang benar untuk komentar PR
-          vercel-args: '--prod'  # Deploy ke production jika push ke main
+          github-comment: true
+          vercel-args: '--prod'
 
-      - name: Post manual comment (fallback)
-        if: github.event_name == 'pull_request' && (failure() || success())
+      - name: Post fallback comment if preview URL is available
+        if: github.event_name == 'pull_request' && steps.deploy.outputs.preview-url != ''
         uses: actions/github-script@v6
         with:
           script: |
             try {
-              const deploymentUrl = '${{ steps.deploy.outputs.preview-url }}'
-              const message = `🚀 Preview Deployment berhasil!\n${deploymentUrl}`
-              
+              const deploymentUrl = '${{ steps.deploy.outputs.preview-url }}';
+              const message = `🚀 Preview Deployment berhasil!\n🔗 ${deploymentUrl}`;
               await github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 body: message
-              })
+              });
             } catch (error) {
-              core.warning('Gagal posting komentar: ' + error.message)
+              core.warning('Gagal posting komentar fallback: ' + error.message);
             }
