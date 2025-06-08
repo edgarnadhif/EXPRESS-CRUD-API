@@ -14,16 +14,16 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Get complete git history
+          fetch-depth: 0  # Needed for proper git history in Vercel
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'npm'
+          cache: 'npm'  # Faster installs through caching
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci  # Clean install for reproducibility
 
       - name: Run tests
         run: npm test
@@ -32,6 +32,9 @@ jobs:
     needs: build-and-test
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      pull-requests: write  # Required for Vercel PR comments
 
     steps:
       - name: Checkout repository
@@ -42,8 +45,10 @@ jobs:
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
+          vercel-version: latest  # Avoids deprecated package warnings
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           scope: ${{ secrets.VERCEL_ORG_ID }}
+          comment-on-pull-request: true  # Explicitly enable PR comments
