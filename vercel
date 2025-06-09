@@ -4,14 +4,14 @@
     {
       "src": "src/app.js",
       "use": "@vercel/node",
-      "config": { 
-        "includeFiles": ["src/**"] 
+      "config": {
+        "includeFiles": ["src/data/films.json"] 
       }
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/films(.*)",
       "dest": "src/app.js"
     }
   ]
