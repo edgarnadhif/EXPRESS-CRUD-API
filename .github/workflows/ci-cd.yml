@@ -36,6 +36,7 @@ jobs:
       contents: read
       pull-requests: write
       deployments: write
+      issues: write 
 
     steps:
       - name: Checkout repository
