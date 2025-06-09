@@ -52,7 +52,7 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           scope: ${{ secrets.VERCEL_ORG_ID }}
-          github-comment: false  # matikan karena kita handle sendiri
+          github-comment: false  
           vercel-args: '--prod'
 
       - name: Fallback Comment (PR only)
